@@ -37,17 +37,18 @@ ActiveRecord::Schema.define(version: 20150826063429) do
   end
 
   create_table "stamps", force: :cascade do |t|
-    t.string   "country"
-    t.string   "currency"
     t.string   "subject"
     t.string   "title"
     t.string   "subtitle"
-    t.string   "face_value"
-    t.string   "condition"
     t.string   "image"
     t.integer  "year"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "country_id"
+    t.integer  "currency_id"
+    t.integer  "condition_id"
+    t.integer  "user_id"
+    t.float    "face_value"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "users", force: :cascade do |t|

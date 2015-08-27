@@ -1,0 +1,20 @@
+<br>
+<br>
+<div class="container">
+  <div class="well">
+    <h2>Users</h2>
+
+    <table class="table table-striped">
+      <tr>
+        <th>User Name</th>
+        <th>Actions</th>
+      </tr>
+      <% @users.each do |user| %>
+      <tr>
+        <td><%= link_to "#{user.username}", user_path(user.id) %></td>
+        <td><%= link_to 'Edit', edit_user_path(user.id) %> | <%= link_to 'Delete', user_path(user), method: :delete, data: {confirm: 'Are you sure?'} %></td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

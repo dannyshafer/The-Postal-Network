@@ -13,3 +13,19 @@
  *= require_tree .
  *= require_self
  */
+
+ .stamps {
+  position: relative;
+  background: #000 url("http://images.fineartamerica.com/images-medium-large/stamp-collection-8-to-10-proportion-wingsdomain-art-and-photography.jpg") center center;
+  width: 100%;
+  background-size: cover;
+  overflow: hidden;
+  color: white;
+  z-index: -1;
+}
+
+#title {
+  color: #1C0171;
+}
+
+

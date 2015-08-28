@@ -4,7 +4,6 @@ class CreateStamps < ActiveRecord::Migration
       t.string :subject
       t.string :title
       t.string :subtitle
-      t.string :image
       t.integer :year
       t.integer :country_id
       t.integer :currency_id

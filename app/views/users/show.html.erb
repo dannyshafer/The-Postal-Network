@@ -6,10 +6,10 @@
 <br>
     <% @stamps.each do |stamp| %>
     <div class="col-md-3">
+      <%= image_tag stamp.image.url(:medium) %>
       <strong>Title:</strong> <%= stamp.title %> |
       <strong>Country:</strong> <%= Country.find_by(id: stamp.country_id).name %> |
       <strong>Year:</strong> <%= stamp.year %> |
-      <strong>Image:</strong> <%= stamp.image %>
       <%= link_to "More", "/users/#{current_user.id}/stamps/#{stamp.id}" %>
     </div>
     <% end %>

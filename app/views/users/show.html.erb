@@ -1,21 +1,18 @@
 <br>
 <br>
 <div class="container">
-  <div class="well">
+<%= link_to "Add Stamp", "/users/#{current_user.id}/stamps/new", class:'btn btn-success' %>
+<br>
+<br>
     <% @stamps.each do |stamp| %>
-    <strong>Image</strong>: <%= stamp.image %> |
-    <strong>Country</strong>: <%= Country.find_by(id: stamp.country_id).name %> |
-    <strong>Currency</strong>: <%= Currency.find_by(id: stamp.currency_id).name %> |
-    <strong>Condition</strong>: <%= Condition.find_by(id: stamp.condition_id).name %> |
-    <strong>Face Value</strong>: <%= stamp.face_value %> |
-    <strong>Subject</strong>: <%= stamp.subject %> |
-    <strong>Title</strong>: <%= stamp.title %> |
-    <strong>Subtitle</strong>: <%= stamp.subtitle %> |
-    <strong>Year</strong>: <%= stamp.year %>
-    <%= link_to "More", "/users/#{current_user.id}/stamps/#{stamp.id}" %>
-    <br>
+    <div class="col-md-3">
+      <strong>Title:</strong> <%= stamp.title %> |
+      <strong>Country:</strong> <%= Country.find_by(id: stamp.country_id).name %> |
+      <strong>Year:</strong> <%= stamp.year %> |
+      <strong>Image:</strong> <%= stamp.image %>
+      <%= link_to "More", "/users/#{current_user.id}/stamps/#{stamp.id}" %>
+    </div>
     <% end %>
-  </div>
-  <%= link_to "Add Stamp", "/users/#{current_user.id}/stamps/new", class:'btn btn-success' %>
+    <br>
 </div>
 

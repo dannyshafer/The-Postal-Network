@@ -11,6 +11,7 @@
     <p><strong>Title</strong>: <%= @stamp.title %></p><br>
     <p><strong>Subtitle</strong>: <%= @stamp.subtitle %></p><br>
     <p><strong>Year</strong>: <%= @stamp.year %></p><br>
+    <%= link_to "Edit", "/users/#{current_user.id}/stamps/#{@stamp.id}/edit", class:'btn btn-success' %>
   </div>
 </div>
 

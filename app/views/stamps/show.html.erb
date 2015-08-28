@@ -2,15 +2,15 @@
 <br>
 <div class="container">
   <div class="well">
-    <p><strong>Image</strong>: <%= stamp.image %></p><br>
-    <p><strong>Country</strong>: <%= Country.find_by(id: stamp.country_id).name %></p><br>
-    <p><strong>Currency</strong>: <%= Currency.find_by(id: stamp.currency_id).name %></p><br>
-    <p><strong>Condition</strong>: <%= Condition.find_by(id: stamp.condition_id).name %></p><br>
-    <p><strong>Face Value</strong>: <%= stamp.face_value %></p><br>
-    <p><strong>Subject</strong>: <%= stamp.subject %></p><br>
-    <p><strong>Title</strong>: <%= stamp.title %></p><br>
-    <p><strong>Subtitle</strong>: <%= stamp.subtitle %></p><br>
-    <p><strong>Year</strong>: <%= stamp.year %></p><br>
+    <p><strong>Image</strong>: <%= @stamp.image %></p><br>
+    <p><strong>Country</strong>: <%= Country.find_by(id: @stamp.country_id).name %></p><br>
+    <p><strong>Currency</strong>: <%= Currency.find_by(id: @stamp.currency_id).name %></p><br>
+    <p><strong>Condition</strong>: <%= Condition.find_by(id: @stamp.condition_id).name %></p><br>
+    <p><strong>Face Value</strong>: <%= @stamp.face_value %></p><br>
+    <p><strong>Subject</strong>: <%= @stamp.subject %></p><br>
+    <p><strong>Title</strong>: <%= @stamp.title %></p><br>
+    <p><strong>Subtitle</strong>: <%= @stamp.subtitle %></p><br>
+    <p><strong>Year</strong>: <%= @stamp.year %></p><br>
   </div>
 </div>
 

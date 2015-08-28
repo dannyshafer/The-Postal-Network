@@ -21,7 +21,7 @@ class StampsController < ApplicationController
 
   def update
     @stamp = Stamp.find(params[:id])
-    @stamp.update(Stamp_params)
+    @stamp.update(stamp_params)
     flash[:notice] = 'Stamp Updated'
     redirect_to current_user
   end

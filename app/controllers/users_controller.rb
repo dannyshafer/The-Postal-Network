@@ -1,5 +1,5 @@
-class StampsController < ApplicationController
-  def index
+class UsersController < ApplicationController
+def index
     @stamps = Stamp.all
   end
 
@@ -10,10 +10,10 @@ class StampsController < ApplicationController
 
   def create
     @stamp = Stamp.new(stamp_params)
-    @stamp.user_id = current_user.id
+    @stamp.user_id = params[:id]
     if @stamp.save
       flash[:notice] = "Stamp created!"
-      redirect_to current_user
+      redirect_to stamp_path(@stamp.id)
     else
       render 'new'
     end
@@ -23,7 +23,7 @@ class StampsController < ApplicationController
     @stamp = Stamp.find(params[:id])
     @stamp.update(Stamp_params)
     flash[:notice] = 'Stamp Updated'
-    redirect_to current_user
+    redirect_to stamps_path
   end
 
   def edit
@@ -34,11 +34,11 @@ class StampsController < ApplicationController
     @stamp = Stamp.find(params[:id])
     @stamp.destroy
     flash[:notice] = 'Stamp Removed'
-    redirect_to current_user
+    redirect_to stamps_path
   end
 
   def show
-    @stamp = Stamp.find_by_id(params[:id])
+    @stamps = Stamp.where(user_id: current_user.id)
   end
 
   private

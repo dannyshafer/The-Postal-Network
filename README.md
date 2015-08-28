@@ -1,2 +1,2 @@
-# Curattr
-Curattr helps philatelists manage their stamp collections
+# Mint No Hinges
+Mint No Hinges helps philatelists manage their stamp collections

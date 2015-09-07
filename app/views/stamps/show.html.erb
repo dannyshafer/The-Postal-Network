@@ -19,6 +19,25 @@
             <%= link_to "Edit", "/users/#{current_user.id}/stamps/#{@stamp.id}/edit", class:'btn btn-default' %>
             <%= link_to "Delete", "/users/#{current_user.id}/stamps/#{@stamp.id}", :method => :delete, class:'btn btn-danger' %>
         </div>
+        <div class="row">
+            <div class="col-sm-4">
+                <p><strong>Comments</strong></p>
+                <% @stamp.comments.each do |comment| %>
+                <p><%= comment.body %>  <%= link_to "Delete", "/users/#{current_user.id}/stamps/#{@stamp.id}/comments/#{comment.id}", :method => :delete %></p>
+                <% end %>
+            </div>
+            <div class="col-sm-4">
+                <%= form_for @comment, :url => "/users/#{current_user.id}/stamps/#{@stamp.id}/comments", :html => { :method => :post } do |f| %>
+                <div class="field">
+                    <%= f.label :Comment %><br />
+                    <%= f.hidden_field :stamp_id, :value => @stamp.id %>
+                    <%= f.text_area :body, class:'form-control' %>
+                    <br>
+                    <%= f.submit 'Add comment', :class => 'btn btn-success'%>
+                </div>
+                <% end %>
+            </div>
+        </div>
     </div>
 </div>
 

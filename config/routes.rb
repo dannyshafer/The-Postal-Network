@@ -7,7 +7,9 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   resources :users do
-    resources :stamps
+    resources :stamps do
+      resources :comments
+    end
   end
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

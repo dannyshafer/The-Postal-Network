@@ -39,6 +39,7 @@ class StampsController < ApplicationController
 
   def show
     @stamp = Stamp.find_by_id(params[:id])
+    @comment = Comment.new
   end
 
   private

@@ -26,6 +26,18 @@
 
 #title {
   color: #1C0171;
+  text-align: center;
+}
+
+.light-font {
+  font-weight: 300;
+}
+
+.centered {
+  text-align: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 

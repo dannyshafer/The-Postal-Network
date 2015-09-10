@@ -1,18 +1,18 @@
 <br>
 <br>
 <div class="container">
-<%= link_to "Add Stamp", "/users/#{current_user.id}/stamps/new", class:'btn btn-success' %>
-<br>
-<br>
-    <% @stamps.each do |stamp| %>
-    <div class="col-md-3">
-      <%= image_tag stamp.image.url(:medium) %>
+  <%= link_to "Add Stamp", "/users/#{current_user.id}/stamps/new", class:'btn btn-success' %>
+  <br>
+  <br>
+  <% @stamps.each do |stamp| %>
+    <div class="col-md-4">
+      <%= image_tag stamp.image.url(:medium) %><br>
       <strong>Title:</strong> <%= stamp.title %> |
-      <strong>Country:</strong> <%= Country.find_by(id: stamp.country_id).name %> |
+      <strong>Country:</strong> <%= Country.find_by(id: stamp.country_id).name %><br>
       <strong>Year:</strong> <%= stamp.year %> |
       <%= link_to "More", "/users/#{current_user.id}/stamps/#{stamp.id}" %>
     </div>
-    <% end %>
-    <br>
+  <% end %>
+  <br>
 </div>
 

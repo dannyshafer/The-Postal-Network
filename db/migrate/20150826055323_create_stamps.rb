@@ -9,6 +9,8 @@ class CreateStamps < ActiveRecord::Migration
       t.integer :currency_id
       t.integer :condition_id
       t.integer :user_id
+      t.text :country_stamps, array: true, defualt: []
+      t.text :subject_stamps, array: true, defualt: []
       t.float :face_value
 
       t.timestamps null: false

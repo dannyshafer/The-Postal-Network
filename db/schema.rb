@@ -51,6 +51,8 @@ ActiveRecord::Schema.define(version: 20150828061438) do
     t.integer  "currency_id"
     t.integer  "condition_id"
     t.integer  "user_id"
+    t.text     "country_stamps",                  array: true
+    t.text     "subject_stamps",                  array: true
     t.float    "face_value"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
